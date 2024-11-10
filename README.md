@@ -2,11 +2,11 @@
 
 
 ```bash
-conda create -n mlproj python=3.9 -y
+conda create -n MLProject python=3.11 -y
 ```
 
 ```bash
-conda activate mlproj 
+conda activate MLProject 
 ```
 
 ```bash
