@@ -1,0 +1,27 @@
+COLUMNS:
+  id: int64
+  age: int64
+  job: object
+  marital: object
+  education: object
+  default: object
+  balance: int64
+  housing: object
+  loan: object
+  contact: object
+  day: int64
+  month: object
+  duration: int64
+  campaign: float64
+  pdays: int64
+  previous: float64
+  poutcome: object
+  generation: object
+  cd: int64
+  state: object
+  zipcode: int64
+  Unnamed: 21: object
+  Unnamed: 22: object
+
+TARGET_COLUMN:
+  name: cd
