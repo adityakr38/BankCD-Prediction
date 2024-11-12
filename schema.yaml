@@ -20,8 +20,6 @@ COLUMNS:
   cd: int64
   state: object
   zipcode: int64
-  Unnamed: 21: object
-  Unnamed: 22: object
 
 TARGET_COLUMN:
   name: cd
