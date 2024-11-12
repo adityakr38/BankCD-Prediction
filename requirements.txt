@@ -6,6 +6,7 @@ matplotlib
 python-box==6.0.2
 pyyaml
 joblib
+types-pyyaml
 flask
 flask-cors
--e .
+

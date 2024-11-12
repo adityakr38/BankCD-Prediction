@@ -10,5 +10,5 @@ conda activate MLProject
 ```
 
 ```bash
-pip install -r requirements.txt 
+conda install --file requirements.txt
 ```
