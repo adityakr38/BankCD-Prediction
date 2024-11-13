@@ -2,6 +2,7 @@ from src.bankcdProject.config.configuration import ConfigurationManager
 from src.bankcdProject.components.data_validation import DataValidation
 from src.bankcdProject import logger
 import pandas as pd
+from pathlib import Path
 
 STAGE_NAME = "Data Validation stage"
 
@@ -14,20 +15,13 @@ class DataValidationTrainingPipeline:
         data_validation_config = config.get_data_validation_config()
         data_validation = DataValidation(config=data_validation_config)
 
-        # Load the preprocessed data
-        try:
-            df = pd.read_csv(data_validation_config.unzip_data_dir)
-            logger.info("Preprocessed data loaded successfully for validation.")
-            validation_status = data_validation.validate_all_columns()
-            if validation_status:
-                logger.info("Data Validation Stage: All preprocessing validations passed successfully.")
-            else:
-                logger.error("Data Validation Stage: Preprocessing validations failed. Refer to STATUS_FILE for details.")
-        except FileNotFoundError:
-            logger.error(f"Preprocessed data file not found at {data_validation_config.unzip_data_dir}")
-        except Exception as e:
-            logger.exception("An error occurred during data validation.")
-            raise e
+        processed_file_path = Path("artifacts/data_ingestion/processed_train.csv")
+        df = pd.read_csv(processed_file_path)
+        
+        if data_validation.validate_all(df):
+            logger.info("Data Validation Stage: All validations passed.")
+        else:
+            logger.error("Data Validation Stage: Validations failed. Check logs for details.")
 
 if __name__ == '__main__':
     try:

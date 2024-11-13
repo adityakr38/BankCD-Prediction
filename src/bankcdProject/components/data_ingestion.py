@@ -29,11 +29,10 @@ class DataIngestion:
             zip_ref.extractall(unzip_path)
 
     def preprocess_data(self, df: pd.DataFrame) -> pd.DataFrame:
-        # Load preprocessing configuration
         preprocessing = self.config.preprocessing
 
         # Step 1: Standardize text values and correct entries
-        # Convert 'job' and 'generation' to lowercase
+
         df['job'] = df['job'].str.lower()
         df['generation'] = df['generation'].str.lower()
 

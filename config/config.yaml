@@ -71,5 +71,6 @@ preprocessing:
 
 data_validation:
   root_dir: "artifacts/data_validation"
-  unzip_data_dir: "artifacts/data_ingestion/train.csv"
+  unzip_data_dir: "artifacts/data_ingestion/processed_train.csv" 
   STATUS_FILE: "artifacts/data_validation/status.txt"
+
