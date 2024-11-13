@@ -19,3 +19,7 @@ class DataValidationConfig:
     all_schema: dict 
     preprocessing: Dict[str, Any]
 
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: Path

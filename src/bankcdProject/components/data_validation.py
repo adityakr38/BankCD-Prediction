@@ -76,7 +76,7 @@ class DataValidation:
             with open(self.config.STATUS_FILE, 'a') as f:
                 f.write("Binary columns validation failed: 'binary_conversion.columns' not specified in configuration.\n")
             return False
-n
+
         for col in binary_cols:
             if col not in df.columns:
                 logger.error(f"Binary column {col} is missing from the DataFrame.")
@@ -87,6 +87,7 @@ n
 
         logger.info("Binary columns validation passed.")
         return True
+
 
 
 
