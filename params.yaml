@@ -1,1 +1,8 @@
-key: val #dummy
+model:
+  max_depth: 6
+  n_estimators: 100
+  random_state: 42  # Ensures reproducibility
+
+train_test_split:
+  test_size: 0.2  # Split ratio for train-test
+  random_state: 42

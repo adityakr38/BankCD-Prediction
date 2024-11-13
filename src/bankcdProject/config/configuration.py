@@ -1,5 +1,5 @@
 from src.bankcdProject.constant import *
-from src.bankcdProject.utils.common import read_yaml,create_directories
+from src.bankcdProject.utils.common import read_yaml, create_directories
 from src.bankcdProject.entity.config_entity import (DataIngestionConfig,
 DataValidationConfig)
 
@@ -18,14 +18,15 @@ class ConfigurationManager:
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
-
+        preprocessing_config = self.config.preprocessing
         create_directories([config.root_dir])
 
         data_ingestion_config = DataIngestionConfig(
             root_dir=config.root_dir,
             source_URL=config.source_URL,
             local_data_file=config.local_data_file,
-            unzip_dir=config.unzip_dir 
+            unzip_dir=config.unzip_dir,
+            preprocessing=preprocessing_config
         )
 
         return data_ingestion_config

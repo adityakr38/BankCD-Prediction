@@ -1,5 +1,4 @@
 COLUMNS:
-  id: int64
   age: int64
   job: object
   marital: object
@@ -18,8 +17,6 @@ COLUMNS:
   poutcome: object
   generation: object
   cd: int64
-  state: object
-  zipcode: int64
 
 TARGET_COLUMN:
   name: cd

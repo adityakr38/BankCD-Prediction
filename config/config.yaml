@@ -1,14 +1,75 @@
 artifacts_root: artifacts
 
+paths:
+  train_data: "artifacts/data_ingestion/train.csv"
 
 data_ingestion:
-  root_dir: artifacts/data_ingestion
-  source_URL: https://github.com/adityakr38/BankCD-Prediction/raw/refs/heads/main/train.zip
-  local_data_file: artifacts/data_ingestion/data.zip
-  unzip_dir: artifacts/data_ingestion
+  root_dir: "artifacts/data_ingestion"
+  source_URL: "https://github.com/adityakr38/BankCD-Prediction/raw/refs/heads/main/train.zip"
+  local_data_file: "artifacts/data_ingestion/data.zip"
+  unzip_dir: "artifacts/data_ingestion"
 
+preprocessing:
+  drop_columns:
+    - "id"
+    - "Unnamed: 21"
+    - "Unnamed: 22"
+    - "state"
+    - "zipcode"
+
+  text_standardization:
+    lowercase_columns:
+      - "job"
+      - "generation"
+    generation_corrections:
+      "oler boomers": "older boomers"
+      "millennials": "millenials"
+    education_corrections:
+      "tertiary": "Tertiary"
+      "primary": "Primary"
+      "primery": "Primary"
+      "secondary": "Secondary"
+      "secendary": "Secondary"
+      "unknown": "Unknown"
+
+  binary_conversion:
+    columns:
+      - "default"
+      - "housing"
+      - "loan"
+    mapping: {"yes": 1, "no": 0}
+
+  imputation:
+    mode_cols:
+      - "job"
+      - "marital"
+      - "generation"
+    median_cols:
+      - "previous"
+    mean_cols:
+      - "campaign"
+
+  outlier_handling:
+    column: "previous"
+    method: "IQR"
+
+  binning:
+    age:
+      bins: [0, 30, 60, 100]
+      labels: ["Low", "Medium", "High"]
+
+  encoding:
+    frequency_mean:
+      - "poutcome"
+      - "contact"
+    one_hot:
+      - "job"
+      - "marital"
+      - "education"
+      - "generation"
+      - "month"
 
 data_validation:
-  root_dir: artifacts/data_validation
-  unzip_data_dir: artifacts/data_ingestion/train.csv
-  STATUS_FILE: artifacts/data_validation/status.txt
+  root_dir: "artifacts/data_validation"
+  unzip_data_dir: "artifacts/data_ingestion/train.csv"
+  STATUS_FILE: "artifacts/data_validation/status.txt"
