@@ -1,221 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Web App</title>
-        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="static/css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="/">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>-->
-<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>-->
-<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>-->
-<!--                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>-->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('static/assets/img/wine.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>Bank CD Prediction</h1>
-                            <span class="subheading">Prediction Model whether a client will enroll in a Certificate of Deposit (CD) or not</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-
-           <!DOCTYPE html>
-<html>
 <head>
-	<meta charset="utf-8">
-	<title>Form-v9 by Colorlib</title>
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Font-->
-	<link rel="stylesheet" type="text/css" href="static/css2/nunito-font.css">
-	<!-- Main Style Css -->
-    <link rel="stylesheet" href="static/css2/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will your client enroll for CD Form</title>
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
-<body class="form-v9">
-	<div class="page-content">
-		<div class="form-v9-content" style="background-image: url('static/assets/img/form-v9.jpg')">
-			<form class="form-detail" action="/predict" method="post">
-				<h2>Please Fill The Information</h2>
-				<div class="form-row-total">
-                    <div class="form-row">
-                        <label for="age">Age:</label>
-                        <input type="text" name="age" id="age" class="input-text" placeholder="age" required>
-                    </div>
-                    
-                    <div class="form-row">
-                        <label for="job">Job:</label>
-                        <input type="text" name="job" id="job" class="input-text" placeholder="job" required>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="marital">Marital:</label>
-                            <input type="text" name="marital" id="marital" class="input-text" placeholder="marital" required>
-                        </div>
-                    
-                        <div class="form-row">
-                            <label for="education">Education:</label>
-                            <input type="text" name="education" id="education" class="input-text" placeholder="education" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="default">Default:</label>
-                            <input type="text" name="default" id="default" class="input-text" placeholder="default" required>
-                        </div>
-                    
-                        <div class="form-row">
-                            <label for="balance">Balance:</label>
-                            <input type="text" name="balance" id="balance" class="input-text" placeholder="balance" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="housing">Housing:</label>
-                            <input type="text" name="housing" id="housing" class="input-text" placeholder="housing" required>
-                        </div>
-                    
-                        <div class="form-row">
-                            <label for="loan">Loan:</label>
-                            <input type="text" name="loan" id="loan" class="input-text" placeholder="loan" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="contact">Contact:</label>
-                            <input type="text" name="contact" id="contact" class="input-text" placeholder="contact" required>
-                        </div>
-                    
-                        <div class="form-row">
-                            <label for="day">Day:</label>
-                            <input type="text" name="day" id="day" class="input-text" placeholder="day" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="month">Month:</label>
-                            <input type="text" name="month" id="month" class="input-text" placeholder="month" required>
-                        </div>
-                    
-                        <div class="form-row">
-                            <label for="duration">Duration:</label>
-                            <input type="text" name="duration" id="duration" class="input-text" placeholder="duration" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="campaign">Campaign:</label>
-                            <input type="text" name="campaign" id="campaign" class="input-text" placeholder="campaign" required>
-                        </div>
-                    
-                        <div class="form-row">
-                            <label for="pdays">Pdays:</label>
-                            <input type="text" name="pdays" id="pdays" class="input-text" placeholder="pdays" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="previous">Previous:</label>
-                            <input type="text" name="previous" id="previous" class="input-text" placeholder="previous" required>
-                        </div>
-                    
-                        <div class="form-row">
-                            <label for="poutcome">Poutcome:</label>
-                            <input type="text" name="poutcome" id="poutcome" class="input-text" placeholder="poutcome" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row-total">
-                        <div class="form-row">
-                            <label for="generation">Generation:</label>
-                            <input type="text" name="generation" id="generation" class="input-text" placeholder="generation" required>
-                        </div>
-                    </div>
-                    
+<body>
+    <div class="form-container">
+        <form id="multiStepForm" class="form-detail" action="/predict" method="post">
+            <h2>Please Fill The Information about your client</h2>
 
-				<div class="form-row-last">
-					<input type="submit" name="register" class="register" value="Predict">
-				</div>
-			</form>
-		</div>
-	</div>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-</html>
-
-        </div>
-
-
-        <!-- Footer-->
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="https://www.linkedin.com/in/kumaraditya23/">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://github.com/adityakr38">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="small text-center text-muted fst-italic"></div>
-                        <div class="small text-center text-muted fst-italic"></div>
-                    </div>
-                </div>
+            <!-- Form Steps -->
+            <div class="form-step active">
+                <label for="age">What is your client age?</label>
+                <input type="number" name="age" id="age" class="input-text" placeholder="Enter your client age" required>
+                <button type="button" class="next-btn">Next</button>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="static/js/scripts.js"></script>
-    </body>
+
+            <div class="form-step">
+                <label for="job">What is your client job type?</label>
+                <select name="job" id="job" class="input-text" required>
+                    <option value="">Select job type</option>
+                    <option value="admin.">Admin</option>
+                    <option value="housemaid">Housemaid</option>
+                    <option value="entrepreneur">Entrepreneur</option>
+                    <option value="technician">Technician</option>
+                    <option value="self-employed">Self-employed</option>
+                    <option value="student">Student</option>
+                    <option value="unemployed">Unemployed</option>
+                    <option value="services">Services</option>
+                    <option value="management">Management</option>
+                    <option value="retired">Retired</option>
+                    <option value="blue-collar">Blue-collar</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <div class="form-step">
+                <label for="marital">What is your client marital status?</label>
+                <select name="marital" id="marital" class="input-text" required>
+                    <option value="">Select marital status</option>
+                    <option value="single">Single</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="married">Married</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <div class="form-step">
+                <label for="education">What is your client education level?</label>
+                <select name="education" id="education" class="input-text" required>
+                    <option value="">Select education level</option>
+                    <option value="Tertiary">Tertiary</option>
+                    <option value="Primary">Primary</option>
+                    <option value="Secondary">Secondary</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="default">Do your client have a credit default?</label>
+                <select name="default" id="default" class="input-text" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="balance">What is your client average yearly balance?</label>
+                <input type="number" name="balance" id="balance" class="input-text" placeholder="Enter balance" required>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="housing">Does your client have a housing loan?</label>
+                <select name="housing" id="housing" class="input-text" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="loan">Does your client have a personal loan?</label>
+                <select name="loan" id="loan" class="input-text" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="contact">Preferred contact method?</label>
+                <select name="contact" id="contact" class="input-text" required>
+                    <option value="">Select contact method</option>
+                    <option value="cellular">Cellular</option>
+                    <option value="telephone">Telephone</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="day">What day of the month you last contacted your client?</label>
+                <input type="number" name="day" id="day" class="input-text" placeholder="Enter day" required>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="month">What month did you last contacted your client?</label>
+                <select name="month" id="month" class="input-text" required>
+                    <option value="">Select month</option>
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="duration">What was the duration (in seconds) of your last contact with your client?</label>
+                <input type="number" name="duration" id="duration" class="input-text" placeholder="Enter duration" required>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="campaign">How many contacts you made during this campaign with your client?</label>
+                <input type="number" name="campaign" id="campaign" class="input-text" placeholder="Enter number of contacts" required>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="pdays">How many days since you last contacted to your client in a previous campaign?</label>
+                <input type="number" name="pdays" id="pdays" class="input-text" placeholder="Enter days" required>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="previous">How many times you contacted your client before this campaign?</label>
+                <input type="number" name="previous" id="previous" class="input-text" placeholder="Enter previous contacts" required>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            <div class="form-step">
+                <label for="poutcome">Did this client enroll in the previous marketing campaign?</label>
+                <select name="poutcome" id="poutcome" class="input-text" required>
+                    <option value="">Select outcome</option>
+                    <option value="failure">Failure</option>
+                    <option value="success">Success</option>
+                    <option value="other">Other</option>
+                    <option value="unknown">Unknown</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <!-- Repeat the format for each question, ensuring each question is in a new div.form-step -->
+
+            <div class="form-step">
+                <label for="generation">What generation does your client belong to?</label>
+                <select name="generation" id="generation" class="input-text" required>
+                    <option value="">Select generation</option>
+                    <option value="millenials">Millennials</option>
+                    <option value="silent generation">Silent Generation</option>
+                    <option value="older boomers">Older Boomers</option>
+                    <option value="gen x">Gen X</option>
+                    <option value="younger boomers">Younger Boomers</option>
+                </select>
+                <button type="button" class="back-btn">Back</button>
+                <button type="submit" class="submit-btn">Predict</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="static/js/scripts.js"></script>
+</body>
 </html>
+
