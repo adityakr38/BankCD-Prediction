@@ -1,8 +1,13 @@
-model:
-  max_depth: 6
-  n_estimators: 100
-  random_state: 42  # Ensures reproducibility
-
-train_test_split:
-  test_size: 0.2  # Split ratio for train-test
+XGBoost:
+  subsample: 1.0
+  reg_lambda: 2
+  reg_alpha: 0
+  n_estimators: 200
+  max_depth: 16
+  learning_rate: 0.1
+  gamma: 0
+  colsample_bytree: 0.8
+  eval_metric: logloss
   random_state: 42
+
+

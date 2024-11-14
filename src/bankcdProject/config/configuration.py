@@ -1,7 +1,7 @@
 from src.bankcdProject.constant import *
 from src.bankcdProject.utils.common import read_yaml, create_directories
 from src.bankcdProject.entity.config_entity import (DataIngestionConfig,
-DataValidationConfig, DataTransformationConfig)
+                                                    DataValidationConfig, DataTransformationConfig, ModelTrainerConfig,ModelEvaluationConfig)
 from pathlib import Path
 
 class ConfigurationManager:
@@ -60,3 +60,51 @@ class ConfigurationManager:
             )
 
             return data_transformation_config
+
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.XGBoost  
+        schema = self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path=config.test_data_path,
+            model_name=config.model_name,
+            target_column=schema.name,
+            
+            # XGBoost parameters
+            subsample=params.subsample,
+            reg_lambda=params.reg_lambda,
+            reg_alpha=params.reg_alpha,
+            n_estimators=params.n_estimators,
+            max_depth=params.max_depth,
+            learning_rate=params.learning_rate,
+            gamma=params.gamma,
+            colsample_bytree=params.colsample_bytree,
+            eval_metric=params.eval_metric,
+            random_state=params.random_state
+        )
+
+        return model_trainer_config
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.XGBoost
+        schema =  self.schema.TARGET_COLUMN
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path = config.model_path,
+            all_params=params,
+            metric_file_name = config.metric_file_name,
+            target_column = schema.name
+           
+        )
+
+        return model_evaluation_config

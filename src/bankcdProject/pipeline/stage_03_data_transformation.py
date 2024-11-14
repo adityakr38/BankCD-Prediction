@@ -12,11 +12,9 @@ class DataTransformationTrainingPipeline:
 
     def main(self):
         try:
-            # Read the entire status file content
             with open(Path("artifacts/data_validation/status.txt"), "r") as f:
                 status_content = f.read()
 
-            # Check if validation passed
             if "Passed" in status_content:
                 config = ConfigurationManager()
                 data_transformation_config = config.get_data_transformation_config()
