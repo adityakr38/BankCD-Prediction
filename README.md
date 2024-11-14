@@ -26,3 +26,6 @@ conda install --file requirements.txt
 8. update the main.py
 9. update the app.py
 
+
+418272792448.dkr.ecr.us-east-1.amazonaws.com/bankcdproject
+
