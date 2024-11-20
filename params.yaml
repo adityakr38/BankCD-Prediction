@@ -10,4 +10,16 @@ XGBoost:
   eval_metric: logloss
   random_state: 42
 
+GradientBoosting:
+  n_estimators: 200
+  max_depth: 16
+  learning_rate: 0.01
+  random_state: 42
+
+SVM:
+  kernel: rbf
+  C: 1.0
+  probability: True
+  random_state: 42
+
 

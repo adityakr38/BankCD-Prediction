@@ -31,16 +31,25 @@ class ModelTrainerConfig:
     test_data_path: Path
     model_name: str
     target_column: str
+
+    #XGBoost
     subsample: float
     reg_lambda: int
     reg_alpha: int
-    n_estimators: int
-    max_depth: int
-    learning_rate: float
     gamma: int
     colsample_bytree: float
+    
+    #SVM
+    kernel : str
+    C: float
+    probability: bool
+
+    #For GB and XGB
+    max_depth: int
+    learning_rate: float
     eval_metric: str
     random_state: int
+    n_estimators: int
 
 
 @dataclass(frozen=True)
@@ -48,6 +57,7 @@ class ModelEvaluationConfig:
     root_dir: Path
     test_data_path: Path
     model_path: Path
+    model_name: str 
     all_params: dict
     metric_file_name: Path
     target_column: str

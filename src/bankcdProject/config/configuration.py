@@ -50,20 +50,20 @@ class ConfigurationManager:
         return data_validation_config
 
     def get_data_transformation_config(self) -> DataTransformationConfig:
-            config = self.config.data_transformation
+        config = self.config.data_transformation
 
-            create_directories([config.root_dir])
+        create_directories([config.root_dir])
 
-            data_transformation_config = DataTransformationConfig(
-                root_dir=config.root_dir,
-                data_path=config.data_path,
-            )
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+        )
 
-            return data_transformation_config
+        return data_transformation_config
 
-    def get_model_trainer_config(self) -> ModelTrainerConfig:
+    def get_model_trainer_config(self, model_type: str) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        params = self.params.XGBoost  
+        params = self.params[model_type]  
         schema = self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
@@ -72,39 +72,48 @@ class ConfigurationManager:
             root_dir=config.root_dir,
             train_data_path=config.train_data_path,
             test_data_path=config.test_data_path,
-            model_name=config.model_name,
+            model_name=model_type,
             target_column=schema.name,
             
-            # XGBoost parameters
-            subsample=params.subsample,
-            reg_lambda=params.reg_lambda,
-            reg_alpha=params.reg_alpha,
-            n_estimators=params.n_estimators,
-            max_depth=params.max_depth,
-            learning_rate=params.learning_rate,
-            gamma=params.gamma,
-            colsample_bytree=params.colsample_bytree,
-            eval_metric=params.eval_metric,
-            random_state=params.random_state
+            # Common parameters
+            n_estimators=params.n_estimators if hasattr(params, "n_estimators") else None,
+            max_depth=params.max_depth if hasattr(params, "max_depth") else None,
+            learning_rate=params.learning_rate if hasattr(params, "learning_rate") else None,
+            random_state=params.random_state,
+
+            # XGBoost-specific parameters
+            subsample=params.subsample if model_type == "XGBoost" else None,
+            reg_lambda=params.reg_lambda if model_type == "XGBoost" else None,
+            reg_alpha=params.reg_alpha if model_type == "XGBoost" else None,
+            gamma=params.gamma if model_type == "XGBoost" else None,
+            colsample_bytree=params.colsample_bytree if model_type == "XGBoost" else None,
+            eval_metric=params.eval_metric if model_type == "XGBoost" else None,
+
+            # SVM-specific parameters
+            kernel=params.kernel if model_type == "SVM" else None,
+            C=params.C if model_type == "SVM" else None,
+            probability=params.probability if model_type == "SVM" else None
         )
 
         return model_trainer_config
 
-    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
-        config = self.config.model_evaluation
-        params = self.params.XGBoost
-        schema =  self.schema.TARGET_COLUMN
 
+    def get_model_evaluation_config(self, model_type: str) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
         create_directories([config.root_dir])
+        params = getattr(self.params, model_type)
+        schema = self.schema.TARGET_COLUMN
+
+        model_path = f"{config.model_path}/{model_type}.joblib"
 
         model_evaluation_config = ModelEvaluationConfig(
             root_dir=config.root_dir,
             test_data_path=config.test_data_path,
-            model_path = config.model_path,
+            model_path=Path(model_path),
+            model_name=model_type,  
             all_params=params,
-            metric_file_name = config.metric_file_name,
-            target_column = schema.name
-           
+            metric_file_name=config.metric_file_name,
+            target_column=schema.name
         )
 
         return model_evaluation_config

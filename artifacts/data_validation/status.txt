@@ -1,4 +1,0 @@
-Validation status: Passed
-Column validation passed.
-Binary columns validation passed.
-Dropped columns validation passed.

@@ -10,9 +10,12 @@ class ModelEvaluationTrainingPipeline:
 
     def main(self):
         config = ConfigurationManager()
-        model_evaluation_config = config.get_model_evaluation_config()
-        model_evaluation_config = ModelEvaluation(config=model_evaluation_config)
-        model_evaluation_config.save_results()
+        for model_type in ["XGBoost", "GradientBoosting", "SVM"]:
+            logger.info(f"Starting evaluation for model: {model_type}")
+            model_evaluation_config = config.get_model_evaluation_config(model_type=model_type)
+            model_evaluation = ModelEvaluation(config=model_evaluation_config)
+            model_evaluation.save_results()
+            logger.info(f"Completed evaluation for model: {model_type}")
 
 
 if __name__ == '__main__':

@@ -10,10 +10,17 @@ class ModelTrainerTrainingPipeline:
 
     def main(self):
         config = ConfigurationManager()
-        model_trainer_config = config.get_model_trainer_config()
-        model_trainer = ModelTrainer(config=model_trainer_config)
-        model_trainer.train()
 
+        for model_type in ["XGBoost", "GradientBoosting", "SVM"]:
+            try:
+                logger.info(f"Starting training for model: {model_type}")
+                model_trainer_config = config.get_model_trainer_config(model_type=model_type)
+                model_trainer = ModelTrainer(config=model_trainer_config)
+                model_trainer.train()
+                logger.info(f"Completed training for model: {model_type}")
+            except Exception as e:
+                logger.exception(f"Error occurred during training of model: {model_type}. Details: {e}")
+                raise e
 
 if __name__ == '__main__':
     try:
