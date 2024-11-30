@@ -1,31 +1,41 @@
-# BankCD-Prediction
+echo "# Bank CD Prediction Project
 
+## Aim
+The aim of this project is to develop an efficient machine learning model for predicting whether a client will enroll in a Certificate of Deposit (CD), optimizing Bank's marketing efforts and reducing costs.
 
-```bash
-conda create -n MLProject python=3.11 -y
-```
+## Description
+This is an end-to-end machine learning project:
+- **Model**: XGBoost with ROC-AUC of 91%.
+- **Deployment**: AWS and CI/CD pipeline.
+- **Codebase**: Modular and scalable.
 
-```bash
-conda activate MlProject 
-```
+## Features
+- Predicts customer enrollment in CDs.
+- Fully automated data preprocessing and model training pipeline.
+- Real-time deployment for predictions.
 
-```bash
-conda install --file requirements.txt
-```
+## Technologies Used
+- **Languages**: Python
+- **Frameworks**: Scikit-learn, XGBoost
+- **Deployment**: AWS, Docker, Github Actions (CI/CD pipeline)
+- **Version Control**: Git
 
+## Installation
+To run the project locally:
+\`\`\`bash
+# Clone the repository
+git clone <https://github.com/adityakr38/BankCD-Prediction.git>
 
-## WorkFLow
+# Navigate to the project directory
+cd <BankCD-Prediction>
 
-1. update config.yaml
-2. update schema.yaml
-3. update params.yaml
-4. update the entity
-5. update the configuration manager in src config
-6. update the components
-7. update the pipeline
-8. update the main.py
-9. update the app.py
+# Install dependencies
+pip install -r requirements.txt
+\`\`\`
 
+## Performance Metrics
+- **ROC-AUC**: 91%
 
-418272792448.dkr.ecr.us-east-1.amazonaws.com/bankcdproject
-
+## Contact
+For questions or contributions, reach out to [Aditya Kumar] at [https://www.linkedin.com/in/kumaraditya23/].
+" > README.md
