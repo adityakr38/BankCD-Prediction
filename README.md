@@ -22,24 +22,34 @@ This is an end-to-end machine learning project:
 
 ## Installation
 To run the project locally:
-\`\`\`bash
+```bash
 # Clone the repository
 git clone <https://github.com/adityakr38/BankCD-Prediction.git>
+```
 
 # Navigate to the project directory
+```bash
 cd <BankCD-Prediction>
+```
 
 # Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
 # To Run the code
-Run python main.py (For running the model on your local and loading artifacts)
-Run python app.py (Once model is loaded you can run the website on your local)
-\`\`\`
+For running the model on your local and loading artifacts
+```bash
+python main.py
+```
+Once model is loaded you can run the website on your local
+```bash
+python app.py 
+```
 
 ## Performance Metrics
 - **ROC-AUC**: 91%
 
 ## Contact
-For questions or contributions, reach out to [Aditya Kumar] at [https://www.linkedin.com/in/kumaraditya23/].
+For questions or contributions, reach out to Aditya Kumar at https://www.linkedin.com/in/kumaraditya23/.
 
