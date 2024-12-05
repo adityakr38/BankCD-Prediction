@@ -1,4 +1,4 @@
-### Bank CD Prediction Project
+### Bank CD Prediction 
 
 ## Aim
 The aim of this project is to develop an efficient machine learning model for predicting whether a client will enroll in a Certificate of Deposit (CD), optimizing Bank's marketing efforts and reducing costs.
@@ -31,6 +31,10 @@ cd <BankCD-Prediction>
 
 # Install dependencies
 pip install -r requirements.txt
+
+# To Run the code
+Run python main.py (For running the model on your local and loading artifacts)
+Run python app.py (Once model is loaded you can run the website on your local)
 \`\`\`
 
 ## Performance Metrics
