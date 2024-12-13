@@ -1,4 +1,4 @@
-### Bank CD Prediction Project
+### Bank CD Prediction Project (If you are having trouble understanding the project, you can navigate to the Model.ipynb file, where you can find the code for model development.)
 
 ## Aim
 The aim of this project is to develop an efficient machine learning model for predicting whether a client will enroll in a Certificate of Deposit (CD), optimizing Bank's marketing efforts and reducing costs.
